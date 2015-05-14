@@ -49,5 +49,29 @@ de nuestro repo.
 8- Nos faltan solo unos ultimos pasos:
 
 	A- Metemos nuestros archivos en nuestro repo local.
-	B-
+		(Ejemplo Archivo.Java)
+	B-usamos el comando: git add .
+		(Para añadir todos los archivos)
+	C- lo commitiamos, (Un mensaje obligatorio para dar ingfo)
+	comando: git commit -m 'nuestro mensaje'
+
+	D- Enviamos a nuestro repo en Github:
+	comando: git push
+
+	E- Le damos los datos de acceso (usuario y contraseña)
+
+9- Revisamos nuestro repo en Github (nuestra copia en linea y ya deberia
+estar alli el archivo)
+
+10- Mandarlo al principal que esta en mi cuenta:
+
+Luego navegamos a nuestro repositorio origin, en este caso 
+https://github.com/<NUESTRO USARIO/Practicas-Ovi-2015, en donde ya deberías
+poder ver los cambios que acabas de impactar.
+ Para solicitar al repositorio upstream que integre nuestros cambios
+ simplemente hacemos click en el botón pull request.
+ Y ahora tan sólo resta esperar que los administradores del 
+repositorio upstream (en este caso nosotros) revisen los cambios 
+y los impacten en la aplicación.
+
 
