@@ -1,0 +1,53 @@
+Antes instalen (o resiven si tiene Git instalado)
+
+	Debian y deribados: sudo aptitude install git-core
+	
+
+Pasos para Enlazar el repo ya existente en Github.
+
+1- Crear una directorio para alojar los repos:
+
+	-nos vamos al terminar y a la ruta donde lo vamos a crear.
+	
+	comando: mkdir DirectorioContenedor
+
+2- Entramos en el:
+
+	comando: cd DirectorioContenedor
+
+3-Abrimos el navegador y nos registramo y/o logeamos en github.com,
+buscan el repo pegando este link:
+	
+	https://github.com/JMEspiz/Practicas-Ovi-2015
+
+4- Forkeamos (Crear una copia en tu cuenta del repo), hacen click
+en el boton Fork en la parte superior derecha. Con esto tenemos nuestra 
+copia en cuenta (origin), en mi cuenta esta el master (Ud envian 
+las modificaciones y yo las agrego), solo nos falta bajar el repo 
+a nuestra PC.
+
+5-Una ves en el repo, en la parte derecha dice HTTPS clone url, 
+le hacen clic en el icono de l portapales y volvemos a la terminal.
+
+	EJEMPLO -->comando: git clone https://github.com/<AQUI VA TU USARIO>/Practicas-Ovi-2015.git
+
+
+5- Ya tenemos el repo copiado en nuestra PC local:
+	
+	comando cd Practicas-Ovi-2015
+
+6- ahora a sincronizar nuestra subida, usamos el mismo link que copiamos:
+de nuestro repo.
+	
+	comando: git remote add -m Practicas-Ovi-2015 https://github.com/<NUESTRO USUARIO>/Practicas-Ovi-2015.git
+
+7- Falta la configuracion global para trabajar bien con git:
+
+	comando: git config --global user.name <AQUI VA TU NOMBRE DE USUARIO>
+	comando: git config --global user.email <AQUI VA TU NOMBRE DE USUARIO>
+
+8- Nos faltan solo unos ultimos pasos:
+
+	A- Metemos nuestros archivos en nuestro repo local.
+	B-
+
