@@ -74,4 +74,25 @@ poder ver los cambios que acabas de impactar.
 repositorio upstream (en este caso nosotros) revisen los cambios 
 y los impacten en la aplicación.
 
+1- Hacemos Click en pull requst
+2- Click new pull request
+3- Nos saldran los archivos a subir.
+4- Agregamos un pequeño mensaje.
+5- create pull request.
+6- Listo el pull request, esperan que yo lo veo y lo adiccione al repo
+principal.
 
+11- A medida que sigamos trabajando, querremos mantener actualizados
+ nuestros repositorios (local y origin) con los cambios del 
+repositorio upstream. Para eso configuramos el repositorio upstream 
+como un repositorio remoto (remote) vinculado a nuestro repositorio 
+local. Situados en el directorio del repositorio, en nuestro ejemplo
+ ~/DirectorioContendor/Programa-Ovi-2015, deberemos ejecutar:
+
+
+git remote add upstream git@github.com:JMEspiz/Practicas-Ovi-2015.git
+
+Cuando querramos traer las actualizaciones de upstream, deberemos ejecutar:
+
+git fetch upstream
+git merge upstream/master
