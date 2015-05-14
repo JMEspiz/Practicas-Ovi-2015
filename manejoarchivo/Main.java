@@ -30,10 +30,16 @@ class Main {
 
 	public static void main(String[] args){
 
-		Archivo a;
-		a = new Archivo("hola.txt", "/home/jmex/");
+		Archivo a = new Archivo("hola.txt", "/home/usuario/");
+		Archivo a2 = new Archivo();
+		//Revisar ruta_completa donde se creara el archivo
 
-		a.getRuta();
+		System.out.println(a.ruta_completa);
+		System.out.println(a2.ruta_completa);
+
+		
+
+
 
 	}
 

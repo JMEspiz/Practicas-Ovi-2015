@@ -26,7 +26,7 @@ package manejoarchivo;
 //import java.io.*;
 
 
-class Archivo {
+public class Archivo {
 
 	
 		           
@@ -52,8 +52,5 @@ class Archivo {
 		}
 
 
-		public String getRuta(String ruta_completa){
-
-			return ruta_completa;
-		}
+		
 	}
