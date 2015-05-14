@@ -96,3 +96,8 @@ Cuando querramos traer las actualizaciones de upstream, deberemos ejecutar:
 
 git fetch upstream
 git merge upstream/master
+
+Fuentes y creditos: 
+http://playdoces.appspot.com/documentation/1.2.4/github
+
+A quienes agradezco el excelente articulo sobre git. ^^
