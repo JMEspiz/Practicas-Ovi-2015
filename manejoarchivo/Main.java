@@ -26,14 +26,14 @@ package manejoarchivo;
 //import java.io.*;
 
 
-class Main {
+public class Main {
 
 	public static void main(String[] args){
 
 		Archivo a;
 		a = new Archivo("hola.txt", "/home/jmex/");
 
-		a.getRuta();
+		a.getRuta("");
 
 	}
 

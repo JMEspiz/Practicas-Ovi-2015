@@ -90,7 +90,7 @@ local. Situados en el directorio del repositorio, en nuestro ejemplo
  ~/DirectorioContendor/Programa-Ovi-2015, deberemos ejecutar:
 
 
-git remote add upstream git@github.com:JMEspiz/Practicas-Ovi-2015.git
+git remote add upstream https://github.com/JMEspiz/Practicas-Ovi-2015.git
 
 Cuando querramos traer las actualizaciones de upstream, deberemos ejecutar:
 
