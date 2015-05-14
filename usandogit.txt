@@ -1,0 +1,98 @@
+Antes instalen (o resiven si tiene Git instalado)
+
+	Debian y deribados: sudo aptitude install git-core
+	
+
+Pasos para Enlazar el repo ya existente en Github.
+
+1- Crear una directorio para alojar los repos:
+
+	-nos vamos al terminar y a la ruta donde lo vamos a crear.
+	
+	comando: mkdir DirectorioContenedor
+
+2- Entramos en el:
+
+	comando: cd DirectorioContenedor
+
+3-Abrimos el navegador y nos registramo y/o logeamos en github.com,
+buscan el repo pegando este link:
+	
+	https://github.com/JMEspiz/Practicas-Ovi-2015
+
+4- Forkeamos (Crear una copia en tu cuenta del repo), hacen click
+en el boton Fork en la parte superior derecha. Con esto tenemos nuestra 
+copia en cuenta (origin), en mi cuenta esta el master (Ud envian 
+las modificaciones y yo las agrego), solo nos falta bajar el repo 
+a nuestra PC.
+
+5-Una ves en el repo, en la parte derecha dice HTTPS clone url, 
+le hacen clic en el icono de l portapales y volvemos a la terminal.
+
+	EJEMPLO -->comando: git clone https://github.com/<AQUI VA TU USARIO>/Practicas-Ovi-2015.git
+
+
+5- Ya tenemos el repo copiado en nuestra PC local:
+	
+	comando cd Practicas-Ovi-2015
+
+6- ahora a sincronizar nuestra subida, usamos el mismo link que copiamos:
+de nuestro repo.
+	
+	comando: git remote add -m Practicas-Ovi-2015 https://github.com/<NUESTRO USUARIO>/Practicas-Ovi-2015.git
+
+7- Falta la configuracion global para trabajar bien con git:
+
+	comando: git config --global user.name <AQUI VA TU NOMBRE DE USUARIO>
+	comando: git config --global user.email <AQUI VA TU NOMBRE DE USUARIO>
+
+8- Nos faltan solo unos ultimos pasos:
+
+	A- Metemos nuestros archivos en nuestro repo local.
+		(Ejemplo Archivo.Java)
+	B-usamos el comando: git add .
+		(Para añadir todos los archivos)
+	C- lo commitiamos, (Un mensaje obligatorio para dar ingfo)
+	comando: git commit -m 'nuestro mensaje'
+
+	D- Enviamos a nuestro repo en Github:
+	comando: git push
+
+	E- Le damos los datos de acceso (usuario y contraseña)
+
+9- Revisamos nuestro repo en Github (nuestra copia en linea y ya deberia
+estar alli el archivo)
+
+10- Mandarlo al principal que esta en mi cuenta:
+
+Luego navegamos a nuestro repositorio origin, en este caso 
+https://github.com/<NUESTRO USARIO/Practicas-Ovi-2015, en donde ya deberías
+poder ver los cambios que acabas de impactar.
+ Para solicitar al repositorio upstream que integre nuestros cambios
+ simplemente hacemos click en el botón pull request.
+ Y ahora tan sólo resta esperar que los administradores del 
+repositorio upstream (en este caso nosotros) revisen los cambios 
+y los impacten en la aplicación.
+
+1- Hacemos Click en pull requst
+2- Click new pull request
+3- Nos saldran los archivos a subir.
+4- Agregamos un pequeño mensaje.
+5- create pull request.
+6- Listo el pull request, esperan que yo lo veo y lo adiccione al repo
+principal.
+
+11- A medida que sigamos trabajando, querremos mantener actualizados
+ nuestros repositorios (local y origin) con los cambios del 
+repositorio upstream. Para eso configuramos el repositorio upstream 
+como un repositorio remoto (remote) vinculado a nuestro repositorio 
+local. Situados en el directorio del repositorio, en nuestro ejemplo
+ ~/DirectorioContendor/Programa-Ovi-2015, deberemos ejecutar:
+
+
+git remote add upstream git@github.com:JMEspiz/Practicas-Ovi-2015.git
+
+Cuando querramos traer las actualizaciones de upstream, deberemos ejecutar:
+
+git fetch upstream
+git merge upstream/master
