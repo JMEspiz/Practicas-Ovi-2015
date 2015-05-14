@@ -25,13 +25,13 @@ package manejoarchivo;
 
 import java.io.*;
 
-class Main {
+public class Main {
 
 	public static void main(String[] args){
 
 		Archivo a = new Archivo();
 
-		a.getRuta();
+		a.getRuta("");
 
 	}
 
