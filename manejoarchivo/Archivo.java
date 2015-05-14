@@ -51,6 +51,14 @@ public class Archivo {
 			this.ruta_completa = ruta + nombre;
 		}
 
+		//Refactorizado, esto es un getter, no recibe argumentos, retorna un valor para trabajar en la clase Main
+
+		public String getRuta(){
+
+			return ruta_completa;
+
+			
+		}
 
 		
 	}

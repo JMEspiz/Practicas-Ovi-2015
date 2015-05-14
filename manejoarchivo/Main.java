@@ -32,10 +32,19 @@ class Main {
 
 		Archivo a = new Archivo("hola.txt", "/home/usuario/");
 		Archivo a2 = new Archivo();
-		//Revisar ruta_completa donde se creara el archivo
+		
 
-		System.out.println(a.ruta_completa);
-		System.out.println(a2.ruta_completa);
+		//Revisar ruta_completa donde se creara el archivo, porque serán usadas en la creacion de Archivos .txt
+
+		String ruta_a, ruta_a2;
+
+		ruta_a = a.getRuta();
+
+		ruta_a2 = a2.getRuta();
+
+		System.out.println(ruta_a);
+
+		System.out.println(ruta_a2);
 
 		
 
