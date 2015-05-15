@@ -24,7 +24,7 @@ package manejoarchivo;
 
 /**********************************************************/
 /* PENDIENTE:                                             */
-/*	Loop para que se repita infinitamente                 */
+/*Loop para que se repita infinitamente                   */
 /**********************************************************/
 
 

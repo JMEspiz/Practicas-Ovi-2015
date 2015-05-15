@@ -19,13 +19,13 @@ package manejoarchivo;
 
 /**********************************************************/
 /* OBJETIVOS:                                             */
-/*	Crear una clase base con el objeto para manejar       */
-/*   Archivos: Crear, Leer, Escribir, Borrar, Buscar      */
+/*Crear una clase base con el objeto para manejar         */
+/*Archivos: Crear, Leer, Escribir, Borrar, Buscar         */
 /**********************************************************/
 
 /**********************************************************/
 /* PENDIENTE:                                             */
-/*	Loop para que se repita infinitamente                 */
+/*Loop para que se repita infinitamente                   */
 /**********************************************************/
 
 import java.util.Scanner;
