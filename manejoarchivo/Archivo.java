@@ -1,39 +1,42 @@
 package manejoarchivo;
 
 
-        /**********************************************************/
-		/* Convenciones para nombre de Variables, Metodos y Clases*/
-		/* VARAIBLES: nombres en minusculas y separados con '_'.  */
-		/*            Ej: nombre_archivo;                         */
-		/* METODOS: camelCase, primera letra en miniscula y luego */
-		/*          mayuscula. Ej:  abrirArchivo();               */
-		/*CLASES: Mayusculas primera letra de cada palabra, EJ:   */
-		/*        ArchivoBase {} o Archivo{}                      */
-		/*INSTANCIAS: primera letra de la clase. Ej: instancia    */
-		/*            la clase -> Archivo a = new Archivo()       */
-		/*                                                        */
-		/* Son solo sugerencias para un buen trabajo en equipo    */
-		/* Abierto a cambios por decisión grupal                  */
-		/**********************************************************/
+/**********************************************************/
+/* Convenciones para nombre de Variables, Metodos y Clases*/
+/* VARAIBLES: nombres en minusculas y separados con '_'.  */
+/*            Ej: nombre_archivo;                         */
+/* METODOS: camelCase, primera letra en miniscula y luego */
+/*          mayuscula. Ej:  abrirArchivo();               */
+/*CLASES: Mayusculas primera letra de cada palabra, EJ:   */
+/*        ArchivoBase {} o Archivo{}                      */
+/*INSTANCIAS: primera letra de la clase. Ej: instancia    */
+/*            la clase -> Archivo a = new Archivo()       */
+/*                                                        */
+/* Son solo sugerencias para un buen trabajo en equipo    */
+/* Abierto a cambios por decisión grupal                  */
+/**********************************************************/
 
-		/**********************************************************/
-		/* OBJETIVOS:                                             */
-		/* 		Crear una clase base con el objeto para manejar   */
-		/*   Archivos: Crear, Leer, Escribir, Borrar, Buscar      */
-		/**********************************************************/
+/**********************************************************/
+/* OBJETIVOS:                                             */
+/*	Crear una clase base con el objeto para manejar       */
+/*   Archivos: Crear, Leer, Escribir, Borrar, Buscar      */
+/**********************************************************/
 
 
-import java.io.*;
+//import java.io.*;
 
-class Archivo {
+
+public class Archivo {
 
 	
 		           
 		//VARIABLES:
 
-		String nombre_archivo, ruta_archivo, ruta_completa;
+		public String nombre_archivo;
+		public String ruta_archivo;
+		public String ruta_completa;
 
-		Archivo(){
+		public Archivo(){
 
 			this.nombre_archivo = "ejemplo.txt";
 			this.ruta_archivo ="";
@@ -41,10 +44,21 @@ class Archivo {
 
 		}
 
+		public Archivo(String nombre, String ruta){
 
-		public void getRuta(String ruta_completa){
-
-			System.out.println(this.ruta_completa);
+			this.nombre_archivo = nombre;
+			this.ruta_archivo =ruta;
+			this.ruta_completa = ruta + nombre;
 		}
-}
 
+		//Refactorizado, esto es un getter, no recibe argumentos, retorna un valor para trabajar en la clase Main
+
+		public String getRuta(){
+
+			return ruta_completa;
+
+			
+		}
+
+		
+	}
