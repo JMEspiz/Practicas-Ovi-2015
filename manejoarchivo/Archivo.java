@@ -22,8 +22,13 @@ package manejoarchivo;
 /*   Archivos: Crear, Leer, Escribir, Borrar, Buscar      */
 /**********************************************************/
 
+/**********************************************************/
+/* PENDIENTE:                                             */
+/*	Loop para que se repita infinitamente                 */
+/**********************************************************/
 
-//import java.io.*;
+
+import java.io.*;
 
 
 public class Archivo {
@@ -35,7 +40,11 @@ public class Archivo {
 		public String nombre_archivo;
 		public String ruta_archivo;
 		public String ruta_completa;
+		public boolean existe;
 
+		
+		//constructor por Defecto
+		
 		public Archivo(){
 
 			this.nombre_archivo = "ejemplo.txt";
@@ -43,22 +52,131 @@ public class Archivo {
 			this.ruta_completa = ruta_archivo + nombre_archivo;
 
 		}
-
+		
+		//CONSTRUCTOR CON PARAMETROS
 		public Archivo(String nombre, String ruta){
 
 			this.nombre_archivo = nombre;
 			this.ruta_archivo =ruta;
-			this.ruta_completa = ruta + nombre;
+			this.ruta_completa = ruta + "/" + nombre;
 		}
 
-		//Refactorizado, esto es un getter, no recibe argumentos, retorna un valor para trabajar en la clase Main
+		//Metodo para obtener la ruta para la instancia File
 
 		public String getRuta(){
 
-			return ruta_completa;
-
+			return ruta_completa;		
+		}
+		
+		//METODO DE LECTURA DE YORMI
+		
+		public void leerArchivo(String archivo){
+			
+			//Variable par manejar la lectura
+			String cadena;
+			
+			//Todo Manejo de archivo debe usarse el Try, para manejar excepciones
+						
+			try {
+				
+				
+				FileReader fr = new FileReader(archivo); //Para leer el archivo
+				BufferedReader br = new BufferedReader(fr);
+				
+				//Recorrrer cada linea del archivo
+				while((cadena = br.readLine()) != null){
+					
+					System.out.println(cadena); //Imprimir cada linea
+				}
+				
+				//Cerrar el archivo
+				
+				br.close();
+				fr.close();
+			
+			}catch(FileNotFoundException error){
+	              System.out.println("No se Encontro el Archivo");
+	        }catch(IOException error){
+	              System.out.println("Se produjo un error de E/S");
+	        }
 			
 		}
-
 		
-	}
+		//METODO PARA VERIFICAR EXISTENCIA DE UN ARCHIVO
+		public boolean existeArchivo(String archivo){
+			
+			File f = new File(archivo);
+			
+			if (f.exists()){
+				System.out.println("Archivo Encontrado!");
+				this.existe = true;
+				return existe;
+			}else{
+				//System.out.println("No Existe el " + nombre_archivo +" en la ruta " + ruta_archivo);
+				this.existe = false;
+				return existe;
+			}
+		}
+		
+		
+		//METODO PARA CREAR ARCHIVO TXT
+		
+		public void crearArchivo(String archivo, boolean existe){
+			
+			if (!existe){
+				
+				File f = new File(archivo);
+			
+				try{
+					//Creando el archivo vacio
+					
+					f.createNewFile();
+					
+				}catch(Exception e){
+					System.out.println("Error al crear el archivo");
+				}
+			}else {
+				System.out.println("Archivo ya existe!");
+			}
+			
+			
+		}
+		
+		//METODO PARA ESCRIBIR ARCHIVO TXT
+		public void escribirArchivo(String archivo, String texto){
+			
+			try{
+				//Instancias necesarias para escribir
+				FileWriter fw = new FileWriter(archivo);
+				BufferedWriter bw = new BufferedWriter(fw);
+				PrintWriter pw = new PrintWriter(bw);
+				
+				//escribiendo
+				pw.write(texto + "\n");
+					
+				//Cerrando Archivo
+				pw.close();
+				bw.close();
+					
+				}catch(IOException e){
+					System.out.println("Error de E/S " + e);
+				}
+		}
+		
+		//METODO PARA BORRAR ARCHIVOS TXT
+		
+		public void borrarArchivo(String archivo){
+			
+			try{
+				File f = new File(archivo);
+				
+				f.delete();
+				System.out.println("Eliminado el archivo " + nombre_archivo + " en la ruta " + ruta_archivo);
+			}catch(Exception e){
+				System.out.println("Error al intentar eliminar archivo");
+			}
+			
+		}
+			
+			
+}
