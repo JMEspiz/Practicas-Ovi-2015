@@ -59,5 +59,34 @@ import java.util.Scanner;
          }//fin del While
 
       }//fin  del metodo valoresIntroducidos
+
+      //METODO PARA CREAR, LLENAR Y VACIAR PILAS DE 'X' CANTIDAD DEFINIDA POR EL USUARIO
+      public static void llenarPila(){
+        
+        //Variables Necesarias
+        Stack pila = new Stack();
+        Scanner entrada = new Scanner(System.in);
+        int cant;
+        int cont = 0;
+
+
+        System.out.println("Cuantos Valores desea colocar dentro de la pila? \n");
+        cant = entrada.nextInt();
+
+        while(cont < cant){
+          System.out.println("Ingrese un valor de tipo entero (Valor ingresado #" + (cont+1) + ")");
+          pila.push(entrada.nextInt());
+          cont++;
+        }
+
+        System.out.println("Su pila ha sido llenado correctamente, a continuación \nse mostrará (Vaciará) su contenido");
+
+        while(pila.empty() == false) {
+          
+          System.out.println(cant + "- " + pila.pop());
+          cant--;
+        }
+
+      } //fin metodo llenarPila;
     
 }//fin de la clase while

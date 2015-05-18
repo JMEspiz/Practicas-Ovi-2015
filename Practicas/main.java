@@ -21,7 +21,8 @@ public class main{
    System.out.println("2-Para Escribir y Leer El Archivo");
    System.out.println("3-Ejecutar Pila Con Valores Alfa Numericos");
    System.out.println("4-Ejecutar Pila Con Elementos Numercos");
-   System.out.println("5-Para Salir");
+   System.out.println("5-Ejecutar Pila con Cantidad \'X\' de Elementos");
+   System.out.println("6-Para Salir");
     
     int opciones =0;
     System.out.println("Elija Una Opcion");
@@ -57,7 +58,11 @@ public class main{
                pilas.pilaNumeros();
                break;
              }
-             case 5:{
+             case 5: {
+              pilas.llenarPila();
+
+             }
+             case 6:{
              System.exit(0);
              break;
          }
