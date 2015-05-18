@@ -59,7 +59,7 @@ public class Main {
 				System.out.println("Ingrese la ruta donde desea crear el Archivo: \n");
 				ruta = entrada.next();
 				
-				System.out.println("Ingrese el nombre del Archivo a crear (incluyendo el .txt): \n");
+				System.out.println("Ingrese el nombre del Archivo a crear (la extensión .txt se genera automaticamente): \n");
 				nombre = entrada.next();
 				
 				//instacia clase Archivo

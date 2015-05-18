@@ -58,7 +58,7 @@ public class Archivo {
 
 			this.nombre_archivo = nombre;
 			this.ruta_archivo =ruta;
-			this.ruta_completa = ruta + "/" + nombre;
+			this.ruta_completa = ruta + "/" + nombre + ".txt";
 		}
 
 		//Metodo para obtener la ruta para la instancia File
