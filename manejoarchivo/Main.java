@@ -45,10 +45,9 @@ public class Main {
 		Scanner entrada = new Scanner(System.in);
 		int opcion, opcion2;
 		
-		
 		//INTERACCION CON EL USUARIO
-		//while(repetir){
-			System.out.println("//**BIENVENIDO**\\");
+		while(repetir){
+			System.out.println("****BIENVENIDO****");
 			System.out.println("Que desea hacer?\n1-- Crear Archivo\n2-- Buscar Archivo \n3-- Salir");
 			System.out.println("NOTA: para Leer, escribir o Eliminar un archivo debe buscalo primero    ");
 			opcion = entrada.nextInt();
@@ -60,7 +59,7 @@ public class Main {
 				System.out.println("Ingrese la ruta donde desea crear el Archivo: \n");
 				ruta = entrada.next();
 				
-				System.out.println("Ingrese el nombre del Archivo a crear: \n");
+				System.out.println("Ingrese el nombre del Archivo a crear (incluyendo el .txt): \n");
 				nombre = entrada.next();
 				
 				//instacia clase Archivo
@@ -72,26 +71,21 @@ public class Main {
 				
 				if(existencia){
 					//En caso de que exista
-					System.out.println("El Arhivo ya Existe!");
+					System.out.println("El Arhivo ya Existe!\n");
 					
-									
 				}else{
 					//lo crea de no existir.
-					System.out.print("El Archivo ha sido creado!");
+					System.out.println("El Archivo ha sido creado!\n");
 					a.crearArchivo(ruta_a, existencia);
 				}
 				
-				
 			}else if (opcion == 2){
-				
-				repetir = false;
-				
 				//Se lee ruta y nombre de archivo
 				
-				System.out.println("Ingrese la ruta donde desea crear el Archivo: \n");
+				System.out.println("Ingrese la ruta del archivo a buscar: \n");
 				ruta = entrada.next();
 				
-				System.out.println("Ingrese el nombre del Archivo a crear: \n");
+				System.out.println("Ingrese el nombre del archivo a buscar: \n");
 				nombre = entrada.next();
 				
 				//instacia clase Archivo
@@ -120,42 +114,21 @@ public class Main {
 						break;
 					case 3:
 						int resp;
-						System.out.println("Esta seguro que desea elimar el archivo " + ruta_a +"\n 1-- SI\n 2-- NO");
+						System.out.println("Esta seguro que desea eliminar el archivo " + ruta_a +"\n 1-- SI\n 2-- NO");
 						resp = entrada.nextInt();
 						if(resp == 1){
 							a.borrarArchivo(ruta_a);
 						}else {
 							System.out.println("Archivo no borrado");
-							repetir = true;
 						}
-						
-					}					
-													
+					
+					}
+				}
 			}else if (opcion == 3){
 				
 				repetir = false;
-				System.exit(0);
-				
-			}else{
-				repetir = false;
+				System.out.println("Adios...\n");
 			}
-			
 		}
-		
-<<<<<<< HEAD
-
-
-<<<<<<< HEAD
-		a.getRuta("");
-=======
->>>>>>> upstream/master
-
 	}
-
 }
-=======
-	}
-
- 
-}
->>>>>>> upstream/master
