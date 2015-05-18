@@ -100,4 +100,7 @@ git merge upstream/master
 Fuentes y creditos: 
 http://playdoces.appspot.com/documentation/1.2.4/github
 
+<<<<<<< HEAD
 A quienes agradezco el excelente articulo sobre git. ^^
+=======
+>>>>>>> upstream/master
