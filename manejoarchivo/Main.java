@@ -129,6 +129,6 @@ public class Main {
 				repetir = false;
 				System.out.println("Adios...\n");
 			}
-		}
-	}
-}
+		} //fin while
+	} //fin metodo main
+} //fin clase
