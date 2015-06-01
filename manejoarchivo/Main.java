@@ -1,4 +1,4 @@
-package manejoarchivo;
+
 
 
 
@@ -25,11 +25,13 @@ package manejoarchivo;
 
 /**********************************************************/
 /* PENDIENTE:                                             */
-/*Loop para que se repita infinitamente                   */
+/*Incorporar un ArrayList para historial                  */
+/*Menu de opcion con el ArrayList                         */
 /**********************************************************/
 
 import java.util.Scanner;
-
+import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class Main {
 
@@ -43,13 +45,19 @@ public class Main {
 		String nombre, ruta; //Valores para la ruta
 		String ruta_a; //Ruta para uso de los metodos
 		Scanner entrada = new Scanner(System.in);
+		Scanner linea = new Scanner(System.in);
 		int opcion, opcion2;
+		ArrayList al = new ArrayList(); //Clase lista para almacenar Strings
 		
 		//INTERACCION CON EL USUARIO
 		while(repetir){
 			System.out.println("****BIENVENIDO****");
-			System.out.println("Que desea hacer?\n1-- Crear Archivo\n2-- Buscar Archivo \n3-- Salir");
-			System.out.println("NOTA: para Leer, escribir o Eliminar un archivo debe buscalo primero    ");
+			System.out.println("Que desea hacer?");
+			System.out.println("1-- Crear Archivo");
+			System.out.println("2-- Buscar Archivo");
+			System.out.println("3-- Ver Archivos usados recientemente");
+			System.out.println("4-- Salir");
+			System.out.println("NOTA: para Leer, escribir o Eliminar un archivo debe buscarlo primero    ");
 			opcion = entrada.nextInt();
 		
 			if(opcion == 1 ){
@@ -77,6 +85,7 @@ public class Main {
 					//lo crea de no existir.
 					System.out.println("El Archivo ha sido creado!\n");
 					a.crearArchivo(ruta_a, existencia);
+					al.add(ruta_a);
 				}
 				
 			}else if (opcion == 2){
@@ -99,7 +108,9 @@ public class Main {
 					//En caso de que exista
 					System.out.println("Seleccione que hacer \n1-- Leerlo \n2-- Escribir\n3--Eliminarlo");
 					opcion2 = entrada.nextInt();
-					
+					//Agregandolo a la Lista
+					al.add(ruta_a);
+
 					switch(opcion2){
 					
 					case 1:
@@ -108,7 +119,7 @@ public class Main {
 					case 2:
 						String texto;
 						System.out.println("Ingrese el texto que desea escribir \n");
-						texto = entrada.next();
+						texto = linea.nextLine();
 						a.escribirArchivo(ruta_a, texto);
 						System.out.println("Archivo escrito");
 						break;
@@ -123,12 +134,32 @@ public class Main {
 						}
 					
 					}
+				}else {
+					System.out.println("Archivo no existe \n\n");
 				}
-			}else if (opcion == 3){
+			}else if (opcion == 4){
 				
 				repetir = false;
 				System.out.println("Adios...\n");
+
+			}else if (opcion == 3){
+				
+				if(al.isEmpty()){
+
+					System.out.println("Vacio...");
+					System.out.print("los datos del historial no son persistentes, se pierden al salir del programa \n\n");
+				}else {
+
+					System.out.println("Archivos usados recientemente: ");
+					ListIterator iterador = al.listIterator();
+
+					while(iterador.hasNext()){
+						System.out.println(iterador.next());
+					}
+					System.out.println("\n\n"); //espacio de separacion.
+				}
 			}
+
 		} //fin while
 	} //fin metodo main
 } //fin clase
