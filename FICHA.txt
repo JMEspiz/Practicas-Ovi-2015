@@ -1,0 +1,101 @@
+MANEJOS DE ENTRADAS Y SALIDAS STANDARD
+
+	ENTRADAS: Se usa una instacia la clase Scanner.
+
+		Scanner <nombre> = new Scanner(System.in);
+
+		Metodos:
+
+			next() : lee un String o caracter.
+			nextInt() : lee un entero.
+			nextDouble() : lee un double.
+			nextLine() : lee una linea.
+
+	SALIDAS:
+		System.out.print("Hola mundo");
+	`	System.out.println(x);
+
+
+OPERACIONES MATEMATICAS:
+	//aqui colocar metodos de la libreria Math, como las raices, exponentes, pi y lo que se les ocurra.
+
+
+
+ESTRUCTURAS DE CONTROL:
+
+	SECUENCIALES:
+		a++;
+		--a;
+	
+	CONDICIONALES:
+		SIMPLES:
+			if(num == 2){ ...}
+		ANIDADAS:
+			IF-ELSE IF-ELSE:
+
+			if(num == 1){ ...
+			}else if (num == 2){...
+			} else {...}
+			
+			SWITCH:
+
+			switch(i):
+				case 1:
+					...;
+					break;
+				case 2:
+					...;
+					break;
+				default:
+					...;
+	REPETITIVAS:
+		FOR:
+			for(int i = 0; i < 10; i++{..}
+		FOR MEJORADO:
+			for(String cadena : texto){...}
+		WHILE:
+			while(x){...}
+		DO WHILE
+			do{...}while(x);
+
+ARREGLOS
+
+	CREACION:
+		int [] arreglo = new int[3];
+		<tipo> [] <nombre> = new <tipo>[<size>];
+	
+	INSERCION:
+		Por el indice:
+			arreglo[0] = 24;
+		con un bucle:
+			for(int i = 0; i < 3; i++){
+				arreglo[i] = i;
+				
+			}
+	
+	BUSQUEDA: 
+		for(int i = 0; i < arreglo.length; i++) {
+			if(arreglo[i] == 2){
+				System.out.println("valor 2 encontrado en el indice " + i " del arreglo");
+			}
+		}
+
+	ORDENAMIENTO:
+		Ascendente completo: OJO ==> import java.util.Arrays;
+			Arrays.sort(<arreglo>);
+
+		Ascendente Parcial: declarar los indices como int
+			Arrays.sort(<arreglo>, <indice inicio>, <indice final>)
+			
+
+		Descendiente Completo:
+
+		Descendiente Parcial:
+
+	OTROS METODOS: OJO ==> import java.util.Arrays;
+		IGUALDAD:
+			Arrays.equals(arreglo1, arreglo2);
+		
+
+
+
