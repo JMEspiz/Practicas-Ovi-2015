@@ -95,7 +95,133 @@ ARREGLOS
 	OTROS METODOS: OJO ==> import java.util.Arrays;
 		IGUALDAD:
 			Arrays.equals(arreglo1, arreglo2);
-		
+==========================================================================================================		
+                      <-//------------------Yormi Altamiranda----------------\\-> 
+  Para leer un Archivo de texto plano .txt 
+  son necesarias las sigientes biblioteca
+    import java.io.FileReader
+    import java.io.BufferedReader 
+    import java.io.IOException
+    --------------------------------------
+    1 
+    lo Primero que se debe hacer antes de declarar y instanciar 
+    dontro del public static void nombre a elegir(){......} es 
+    cerrar en try catch esto permite el manejo de exepciones , es lo correcto 
+    al manejar archivos ficheros etc
+    Ejemplo: 
+              try{
+                  codigo a utilizar
+             
+                   }catch (IOExepcion error){
+                   System.out.println("Se produjo un error de E/S");
+                  }
+     -> IOExepcion: Significa que se ha producido un error en la entrada/salida. Por ejemplo, cuando estamos 
+     leyendo de la consola, un fichero, etc. Es obligatorio tratar 
+     la excepción, ya sea en la cabeza del método 
+     con "throws IOException" o con un bloque try/catch.
+    --------------------------------------------------------------------------------------------
+    2
+    se instancia la clase :
+    FileReader fileReader = new FileReader(nombre del Archivo.txt); <- se le pasa la ruta y 
+    el nombre del archivo con su estencion.txt ya sea por el constructor o directo
+    ---------------------------------------------------------------------------------------------
+   
+    3
+    se instancia la clase:
+    BufferedReader bufer = new BufferedReader(fileReader): <- se le pasa un parametro de
+    tipo FileReader para que lo reserve en la memoria
+    ---------------------------------------------------------------------------------------------
+    4 
+    se instatncia un atributo de tipo String para validar en un while y recibir luego 
+    todo los reservado en BufferedReader con el metodo.readLine(); 
+    String <nombre a usar>
+    Ejemplo:
+               while(nombre a usar!=null){
+                nombre a usar = b.readLine();
+              }
+    ---------------------------------------------------------------------------------------------
+    5
+     dentro del while se hace una segunda  validacion al String instanciado en el 3er paso 
+       que si es igual nada (null) donde se controla que si el documento 
+       .txt esta vacio no retorne la palabra null en Pantalla
+       Ejemplo:
+           
+              if (nombre a usar==null)
+                   break;
+    --------------------------------------------------------------------------------------------              
+    6 se imprime el documento 
+       Ejemplo: System.out.println(cadena);
+    --------------------------------------------------------------------------------------------   
+    6 Fuera del while cerramos BufferedReader 
+      Ejemplo:
+      bufer.close();
+===============================================================================================================
+
+  para escribir un archivo de texto .txt
+  son necesarias las siguentes librerias
+       import java.io.FileWriter;
+       import java.io.BufferedWriter;
+       import java.io.PrintWriter;
+       import java.io.File;
+
+    --------------------------------------------------------------------------------------------
+    lo Primero que se debe hacer antes de declarar y instanciar 
+    dontro del public static void nombre a elegir(){......} es 
+    cerrar en try catch esto permite el manejo de exepciones , es lo correcto 
+    al manejar archivos ficheros etc
+    Ejemplo: 
+              try{
+                  codigo a utilizar
+             
+                   }catch (IOExepcion error){
+                   System.out.println("Se produjo un error de E/S");
+                  }
+
+      -> IOExepcion: Significa que se ha producido un error en la entrada/salida. Por ejemplo, cuando estamos 
+     leyendo de la consola, un fichero, etc. Es obligatorio tratar 
+     la excepción, ya sea en la cabeza del método 
+     con "throws IOException" o con un bloque try/catch.
+     ------------------------------------------------------------------------------------------
+      1 se debe instanciar la clase  File pasar le ruta y el nombre del archivo
+      Ejemplo:
+      File f = new File(nombreArchivo);
+     ------------------------------------------------------------------------------------------
+     2 se debe instanciar la clase FileWriter se le pasa un parametro de
+     tipo File que guarda la ruta y 
+     el nombre del documento
+     Ejemplo: 
+      FileWriter w = new FileWriter(f);
+    -------------------------------------------------------------------------------------------
+    3 se debe instanciar la clase BufferedWriter y se le pasa un parametro de tipo FileWriter para que 
+    reserve ne la memoria 
+     Ejemplo: 
+      BufferedWriter bw = new BufferedWriter(w);
+    -------------------------------------------------------------------------------------------
+    4 se debe instanciar la clase PrintWriter el cual va a escribir en documento 
+    se le pasa un parametro de tipo BufferedWriter
+      Ejemplo:
+       PrintWriter wr = new PrintWriter(bw);
+    -------------------------------------------------------------------------------------------
+    5 procedemos a escribir untexto cualquiera oara eso se utilizan dos metodos 
+       .write(); mientras que write () toma una cadena
+       .append(); Append () puede tomar un CharSequence
+       Ejemplo:     
+       wr.write("Como Escribir un archivo plano .txt");
+       wr.append("\nParticando para en la OVI 2015");
+    -------------------------------------------------------------------------------------------
+    6 se procede a cerrar el PrintWriter y el BufferedWriter para poder guardar el documento
+     Ejemplo:
+              wr.close();
+              bw.close();
+==============================================================================================================
+
+
+
+
+
+
+
+
 
 
 
