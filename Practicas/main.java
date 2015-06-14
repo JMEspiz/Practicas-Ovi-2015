@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 public class main{
 
   public static void main(String[] args){
@@ -29,22 +30,32 @@ public class main{
    System.out.println("8-Para Salir");
     
     int opciones =0;
-    System.out.println("Elija Una Opcion");
+   /* System.out.println("Elija Una Opcion");
     opciones = escribir.nextInt();
     System.out.println("----------------");
+     
+   */
+  
      /*Ciclo repetitivo,el cual me permite repetir hasta que le numero de la opcion no sean igula a 1 2 3*/
      do{
            /*con este if comparo el valor de opciones, que he captado por teclado con la clase Scanner
                 y si no es igual a del menu imprime el numero de captado y arroja un mensaje 
                , esto se va a repetrir hasta que sea igual al del menu */
-          if(opciones <=0 || opciones >8){
-             System.out.println("El Numero "+opciones+" no esta en las opciones");
-             System.out.println("Elija Una Opcion");
-             System.out.println("----------------");
-             opciones = escribir.nextInt();
-             
-           }
-          
+         try{
+              System.out.println("Elija Una Opcion");
+              opciones = escribir.nextInt();
+              System.out.println("----------------");
+
+                 if(opciones <=0 || opciones >8){
+                   System.out.println("El Numero "+opciones+" no esta en las opciones");
+                   System.out.println("Elija Una Opcion");
+                   System.out.println("----------------");
+                   opciones = escribir.nextInt();
+                 }
+             }catch(InputMismatchException e){
+                 System.out.println("Solo Puede Ingresr Numeros");
+                 escribir.next();
+          }
           switch (opciones){
              case 1:{
              a.LeerArchivo("/home/yormi/Practicas-Ovi-2015/Practicas/Archivo.txt");
