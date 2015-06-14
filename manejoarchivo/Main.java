@@ -35,6 +35,7 @@ import java.util.ListIterator;
 
 public class Main {
 
+
 	public static void main(String[] args){
 
 		//VARIABLES E INSTANCIAS:
@@ -58,7 +59,20 @@ public class Main {
 			System.out.println("3-- Ver Archivos usados recientemente");
 			System.out.println("4-- Salir");
 			System.out.println("NOTA: para Leer, escribir o Eliminar un archivo debe buscarlo primero    ");
-			opcion = entrada.nextInt();
+			
+
+			//VALIDAR QUE LA ENTRADA SEA UN ENTERO
+			try{
+				opcion = Integer.parseInt(entrada.next());
+
+
+				//VALIDAR QUE EL NUMERO ELEGIDO ESTE ENTRE 1 Y 4
+
+				if(opcion > 4 || opcion < 1){
+
+					System.out.println("Debe elegir una opcion Valida (entre 1 y 4) \n");
+				}else{
+						
 		
 			if(opcion == 1 ){
 				
@@ -100,16 +114,25 @@ public class Main {
 				//instacia clase Archivo
 				a = new Archivo (nombre, ruta);
 				ruta_a = a.getRuta();
-				
+				//Agregandolo a la lista de recientes
+				al.add(ruta_a);
 				//Se verifica la existencia para inicar el manejo de archivo
 				existencia = a.existeArchivo(ruta_a);
 				
 				if(existencia){
 					//En caso de que exista
 					System.out.println("Seleccione que hacer \n1-- Leerlo \n2-- Escribir\n3--Eliminarlo");
-					opcion2 = entrada.nextInt();
+					
+					//VALIDANDO QUE SEA UN ENTERO Y ESTE EN LAS OPCIONES VALIDAS
+					try{
+					opcion2 = Integer.parseInt(entrada.next());
+
+					if(opcion2 < 1 || opcion2 >3){
+						System.out.println("---ERROR--- \nopcion NO valida");
+					
+					}else{
 					//Agregandolo a la Lista
-					al.add(ruta_a);
+					
 
 					switch(opcion2){
 					
@@ -134,6 +157,12 @@ public class Main {
 						}
 					
 					}
+				}
+				}catch(NumberFormatException e){
+				System.out.println("---ERROR---");
+				System.out.println("Debe ingresar un numero entero entre 1 y 3 \n\n");
+
+				}
 				}else {
 					System.out.println("Archivo no existe \n\n");
 				}
@@ -159,6 +188,13 @@ public class Main {
 					System.out.println("\n\n"); //espacio de separacion.
 				}
 			}
+		}
+
+			}catch(Exception e){
+				System.out.println("---ERROR---");
+				System.out.println("Debe ingresar un numero entero entre 1 y 4 \n\n");
+			}
+		
 
 		} //fin while
 	} //fin metodo main
