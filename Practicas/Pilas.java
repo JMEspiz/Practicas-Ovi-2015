@@ -1,5 +1,5 @@
 import java.util.Stack;
-import java.util.*;
+
 import java.util.Scanner;
      public class Pilas {
       /**
@@ -31,9 +31,9 @@ import java.util.Scanner;
           Stack pila = new Stack();
           int i;
             for(i=1;i<=10;i++){
-              pila.push(i);            }
-      
-            System.out.println("El Ultimo Elemento introducido de la Pila es: " + pila.peek());
+              pila.push(i);           
+              }
+             System.out.println("El Ultimo Elemento introducido de la Pila es: " + pila.peek());
                
                while (pila.empty()==false){
                 System.out.println(pila.pop());
@@ -73,7 +73,7 @@ import java.util.Scanner;
         System.out.println("Cuantos Valores desea colocar dentro de la pila? \n");
         cant = entrada.nextInt();
 
-        while(cont < cant){
+        while(cont<cant){
           System.out.println("Ingrese un valor de tipo entero (Valor ingresado #" + (cont+1) + ")");
           pila.push(entrada.nextInt());
           cont++;
@@ -83,7 +83,7 @@ import java.util.Scanner;
 
         while(pila.empty() == false) {
           
-          System.out.println(cant + "- " + pila.pop());
+          System.out.println(cant + "--" + pila.pop());
           cant--;
         }
 
