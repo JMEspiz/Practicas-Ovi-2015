@@ -215,7 +215,70 @@ ARREGLOS
               bw.close();
 ==============================================================================================================
 
+Pila 
+        Para la pila es necesaria la libreria 
+        import java.util.Stack;
+       
+         Stack nombre a usar = new Stack();
+    -------------------------------------------------------------------------------------------
+        push -> Introducimo un dato en la pila
+        pop  -> Es utilizado para quitar el ultimo dato introducido en pila  
+        peek -> permite ver el ultimo dato de la pila
+        empty -> nos permite validar si hay datos en la pila 
+    ------------------------------------------------------------------------------------------- 
+        esta rutina imprime los elementos introducido en la  pila
+        y como se daran cuneta el primero elemento introducimo pasa 
+        al ultimo lugar de la pila
 
+       while (nombre a usar.empty==false){
+              System.out.println(pila.pop());
+       }
+
+================================================================================================================
+Cola 
+     para la cola es necesaria la libreria 
+      import java.util.LinkedList;
+    -------------------------------------------------------------------------------------------
+    se instancia 
+    
+
+       con offer se añade un elemento a la cola 
+       con poll se obtiene los datos de la cola
+       con peek validamos la cola 
+    -------------------------------------------------------------------------------------------
+        esta rutina validamos la cola y con System.outpriln(cola.poll);
+        procederemos a vaciar e imprimir los elementos de la cola
+
+        while(cola.peek()!=null){
+           System.out.println(cola.poll());
+       }
+
+================================================================================================================
+Lista
+      para lista es necesaria la libreria 
+       import java.util.LinkedList;
+
+   ----------------------------------------------------------------------------------------------
+     para añadir un elemento en la lista usar add
+     add(1,17) con el primero indicamo en qye indice va el valor introducido
+     con get(0) Muestra el valor introducido en ese indice
+     addFirst() Añade el valor en el Primer indice de la lista
+     addLast() Añade el valor en el ultimo indice de la lista
+     seze Se Obtiene el tamaño de la lista 
+     getFirst() nos indica el primer valor de la lista 
+     get(lista.size()-1) tambien regresa el ultimo valor de la lista  
+     getLast() Regresa el ultimo valor de lalista
+
+   ----------------------------------------------------------------------------------------------
+    se instancia de la siguiente manera
+      LinkedList lista = new LinkedList();
+   ----------------------------------------------------------------------------------------------
+    se añade con 
+      lista.add("Primer");
+   ----------------------------------------------------------------------------------------------
+    se imprime con 
+      System.out.println("El Tamaño de la lista es:"+lista.size()); con esto mostramos el tamaño de la lista
+      System.out.println(lista.get(1))
 
 
 
