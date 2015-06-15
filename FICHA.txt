@@ -264,7 +264,7 @@ Lista
      con get(0) Muestra el valor introducido en ese indice
      addFirst() Añade el valor en el Primer indice de la lista
      addLast() Añade el valor en el ultimo indice de la lista
-     seze Se Obtiene el tamaño de la lista 
+     size Se Obtiene el tamaño de la lista 
      getFirst() nos indica el primer valor de la lista 
      get(lista.size()-1) tambien regresa el ultimo valor de la lista  
      getLast() Regresa el ultimo valor de lalista
