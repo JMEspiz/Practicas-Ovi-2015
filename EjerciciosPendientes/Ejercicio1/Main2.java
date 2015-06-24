@@ -37,7 +37,7 @@ class Main22 {
 				} else {
 					//Logica del Algoritmo
 					double resultado;
-					raiz = num / 2; //valor iniciado de la raiz
+					raiz = (double) num / 2; //valor iniciado de la raiz
 					
 					//Asignado el resultado de la formula a la variabel resultado
 					resultado = ra.hacerEcuacion(raiz, num);

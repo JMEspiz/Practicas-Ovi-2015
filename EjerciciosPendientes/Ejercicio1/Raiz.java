@@ -3,7 +3,7 @@ class Raiz {
 	public double hacerEcuacion(double raiz, int num){
 		double resultado;
 		
-		resultado = 1 / 2 * (raiz + num / raiz);
+		resultado =(double) 1 / 2 * (raiz + num / raiz);
 		return resultado;
 	}
 
